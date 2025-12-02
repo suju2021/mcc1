@@ -151,7 +151,7 @@ body {
     /* PERFECT CENTERED LOGIN BOX ON MOBILE */
     .login-box {
         position: relative;   /* Removes right-absolute positioning */
-        width: 90%;           /* Full width but with small margins */
+        width: 80%;           /* Full width but with small margins */
         max-width: 380px;     /* Looks perfect on all mobiles */
         margin: 0 auto;       /* Center horizontally */
         transform: none;
@@ -214,3 +214,4 @@ body {
         right: 200px;
     }
 }
+
