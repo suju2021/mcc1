@@ -23,8 +23,7 @@ body {
     justify-content: flex-start;
     padding-left: 225px;
     background: transparent;
-    /* fade-in is ok */
-    animation: fadeIn 1.2s ease;
+    animation: fadeIn 1.2s ease; /* fade-in allowed */
 }
 
 /* LEFT SIDE CONTENT */
@@ -32,10 +31,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* REMOVED slideIn animation */
 }
 
-/* LOGO STYLING */
+/* LOGO */
 .company-logo {
     width: 120px;
     height: 120px;
@@ -46,91 +44,16 @@ body {
     box-shadow: 0 8px 30px rgba(0,0,0,0.12);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 /* COMPANY NAME */
 .company-name {
     font-size: 28px;
     margin-top: 15px;
     font-weight: 800;
     letter-spacing: 1.5px;
-    color: #000000;
+    color: #000;
     text-align: center;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.1);
     animation: textPop 1.6s ease;
-}
-/* MOBILE RESPONSIVE */
-@media (max-width: 768px) {
-    .header {
-        padding-left: 20px;
-    }
-
-    .company-logo {
-        width: 80px;
-        height: 80px;
-        padding: 8px;
-    }
-
-    .company-name {
-        font-size: 22px;
-    }
-}
-
-@media (max-width: 767px) {
-    .header {
-        height: auto;
-        padding: 40px 20px;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .header-left {
-        width: 100%;
-        align-items: center;
-    }
-
-    .company-logo {
-        width: 80px;
-        height: 80px;
-        padding: 8px;
-        border-radius: 16px;
-    }
-
-    .company-name {
-        font-size: 20px;
-        letter-spacing: 1px;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-    .header {
-        height: 70vh;
-        padding-left: 40px;
-    }
-
-    .company-logo {
-        width: 110px;
-        height: 110px;
-        padding: 10px;
-    }
-
-    .company-name {
-        font-size: 26px;
-    }
-}
-
-@media (min-width: 1025px) {
-    .header {
-        height: 100vh;
-        padding-left: 200px;
-    }
-
-    .company-logo {
-        width: 120px;
-        height: 120px;
-    }
-
-    .company-name {
-        font-size: 28px;
-    }
 }
 
 /* LOGIN BOX */
@@ -145,7 +68,6 @@ body {
     backdrop-filter: blur(12px);
     border-radius: 20px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-    /* REMOVED slideInRight animation */
 }
 
 .login-box h2 {
@@ -153,7 +75,6 @@ body {
     font-size: 22px;
     font-weight: 700;
     text-align: center;
-    color: #28324b;
 }
 
 .login-box form {
@@ -168,16 +89,8 @@ body {
     border-radius: 10px;
     border: 1px solid #d5d9e0;
     font-size: 15px;
-    outline: none;
     background: #ffffffcc;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
     transition: 0.3s ease;
-}
-
-.login-box input:focus,
-.login-box select:focus {
-    border-color: #6a8cff;
-    box-shadow: 0 0 8px rgba(106,140,255,0.3);
 }
 
 .login-box button {
@@ -196,22 +109,81 @@ body {
     background: #244df2;
     transform: scale(1.03);
 }
-
-/* MOBILE RESPONSIVE */
 @media (max-width: 767px) {
+
+    .header {
+        height: auto;
+        padding: 40px 20px;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .header-left {
+        width: 100%;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .company-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .company-name {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    /* Login box centers on mobile */
     .login-box {
         position: static;
         transform: none;
-        margin: 30px auto;
         width: 80%;
-        top: auto;
+        margin: 20px auto;
         right: auto;
+        top: auto;
     }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
 
     .header {
-        flex-direction: column;
-        height: auto;
-        padding-top: 40px;
-        padding-bottom: 40px;
+        height: 75vh;
+        padding-left: 40px;
+    }
+
+    .company-logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .company-name {
+        font-size: 24px;
+    }
+
+    .login-box {
+        right: 80px;
+        width: 350px;
+    }
+}
+@media (min-width: 1025px) {
+
+    .header {
+        height: 100vh;
+        padding-left: 200px;
+    }
+
+    .company-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .company-name {
+        font-size: 28px;
+    }
+
+    .login-box {
+        width: 400px;
+        right: 200px;
     }
 }
