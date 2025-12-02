@@ -2,7 +2,6 @@ body {
     margin: 0;
     font-family: 'Inter', sans-serif;
 
-    /* Gradient that matches your uploaded image */
     background: linear-gradient(
         to bottom,
         #A0D2EB 0%,
@@ -13,17 +12,18 @@ body {
     );
     background-attachment: fixed;
     overflow-x: hidden;
-    body
 }
+
 /* FULL PAGE LEFT-CENTER LOGO SECTION */
 .header {
     width: 100%;
     height: 100vh;
     display: flex;
-    align-items: center;       /* vertical center */
+    align-items: center;
     justify-content: flex-start;
     padding-left: 225px;
     background: transparent;
+    /* fade-in is ok */
     animation: fadeIn 1.2s ease;
 }
 
@@ -32,7 +32,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: slideIn 1.4s ease;
+    /* REMOVED slideIn animation */
 }
 
 /* LOGO STYLING */
@@ -46,13 +46,6 @@ body {
     box-shadow: 0 8px 30px rgba(0,0,0,0.12);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* Hover animation on logo */
-.company-logo:hover {
-    transform: scale(1.07);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.18);
-}
-
 /* COMPANY NAME */
 .company-name {
     font-size: 28px;
@@ -64,23 +57,6 @@ body {
     text-shadow: 0 2px 10px rgba(0,0,0,0.1);
     animation: textPop 1.6s ease;
 }
-
-/* ANIMATIONS */
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideIn {
-    0% { opacity: 0; transform: translateX(-40px); }
-    100% { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes textPop {
-    0% { opacity: 0; transform: scale(0.92); }
-    100% { opacity: 1; transform: scale(1); }
-}
-
 /* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
     .header {
@@ -88,8 +64,8 @@ body {
     }
 
     .company-logo {
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
         padding: 8px;
     }
 
@@ -97,12 +73,12 @@ body {
         font-size: 22px;
     }
 }
-@media (max-width: 767px) {
 
+@media (max-width: 767px) {
     .header {
-        height: auto;                /* No full screen height */
-        padding: 40px 20px;          /* Smaller padding */
-        justify-content: center;     /* Center logo area */
+        height: auto;
+        padding: 40px 20px;
+        justify-content: center;
         text-align: center;
     }
 
@@ -112,21 +88,21 @@ body {
     }
 
     .company-logo {
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
         padding: 8px;
         border-radius: 16px;
     }
 
     .company-name {
-        font-size: 22px;
+        font-size: 20px;
         letter-spacing: 1px;
     }
 }
-@media (min-width: 768px) and (max-width: 1024px) {
 
+@media (min-width: 768px) and (max-width: 1024px) {
     .header {
-        height: 70vh;                /* Slightly smaller than full-height */
+        height: 70vh;
         padding-left: 40px;
     }
 
@@ -140,10 +116,10 @@ body {
         font-size: 26px;
     }
 }
-@media (min-width: 1025px) {
 
+@media (min-width: 1025px) {
     .header {
-        height: 100vh;              /* Full height */
+        height: 100vh;
         padding-left: 200px;
     }
 
@@ -157,7 +133,7 @@ body {
     }
 }
 
-/* LOGIN BOX (right side) */        /* LOGIN BOX START */
+/* LOGIN BOX */
 .login-box {
     position: absolute;
     right: 200px;
@@ -169,7 +145,7 @@ body {
     backdrop-filter: blur(12px);
     border-radius: 20px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-    animation: slideInRight 1.4s ease;
+    /* REMOVED slideInRight animation */
 }
 
 .login-box h2 {
@@ -221,19 +197,13 @@ body {
     transform: scale(1.03);
 }
 
-/* Slide-in animation for login box */
-@keyframes slideInRight {
-    0% { opacity: 0; transform: translate(40px, -50%); }
-    100% { opacity: 1; transform: translate(0, -50%); }
-}
-
 /* MOBILE RESPONSIVE */
 @media (max-width: 767px) {
     .login-box {
         position: static;
         transform: none;
         margin: 30px auto;
-        width: 90%;
+        width: 80%;
         top: auto;
         right: auto;
     }
