@@ -125,7 +125,7 @@ body {
         width: 90px;
         height: 90px;
         padding: 8px;
-        margin-top: 40px;
+        margin-top: 10px;
         border-radius: 16px;
     }
 
@@ -191,3 +191,4 @@ body {
         right: 350px;
     }
 }
+
