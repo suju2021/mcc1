@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
+
     background: linear-gradient(
         to bottom,
         #A0D2EB 0%,
@@ -13,27 +14,25 @@ body {
     overflow-x: hidden;
 }
 
-/* MAIN SECTION – CENTER EVERYTHING */
+/* DESKTOP DEFAULT — LOGO LEFT, LOGIN BOX RIGHT */
 .header {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
-    flex-direction: column;      /* Stacks logo and login box */
     align-items: center;
-    justify-content: center;     /* Perfect center */
-    text-align: center;
-    gap: 25px;                   /* Space between logo & login */
-    padding: 40px 20px;
+    justify-content: flex-start;   /* LEFT align on laptop */
+    padding-left: 200px;           /* Push logo to left */
+    background: transparent;
     animation: fadeIn 1.2s ease;
 }
 
-/* LOGO + TITLE */
 .header-left {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* LOGO */
 .company-logo {
     width: 120px;
     height: 120px;
@@ -45,19 +44,22 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* COMPANY NAME */
 .company-name {
     font-size: 28px;
     margin-top: 15px;
     font-weight: 800;
     letter-spacing: 1.5px;
     color: #000;
-    animation: textPop 1.6s ease;
 }
 
-/* LOGIN BOX */
+/* LOGIN BOX (Right side for desktop) */
 .login-box {
-    width: 90%;
-    max-width: 400px;
+    position: absolute;
+    right: 200px;      /* Position login box at right side */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
     padding: 25px;
     background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(12px);
@@ -105,8 +107,21 @@ body {
     transform: scale(1.03);
 }
 
-/* MOBILE */
+
+/* ============= MOBILE VIEW ============= */
 @media (max-width: 767px) {
+
+    .header {
+        height: auto;
+        padding: 40px 20px;
+
+        display: flex;
+        flex-direction: column; /* Stack logo + login vertically */
+        justify-content: center;
+        align-items: center;    /* CENTER LOGO IN MOBILE */
+        text-align: center;
+        gap: 25px;
+    }
 
     .company-logo {
         width: 90px;
@@ -117,13 +132,18 @@ body {
 
     .company-name {
         font-size: 22px;
-        letter-spacing: 1px;
         margin-top: 10px;
     }
 
+    /* CENTER LOGIN BOX IN MOBILE */
     .login-box {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
         width: 90%;
-        max-width: 360px;
+        max-width: 380px;
+        margin: 0 auto;
         padding: 20px;
     }
 
@@ -139,36 +159,49 @@ body {
     }
 }
 
-/* TABLET */
+
+/* ============= TABLET ============= */
 @media (min-width: 768px) and (max-width: 1024px) {
 
+    .header {
+        padding-left: 40px;
+        justify-content: flex-start; /* logo left */
+    }
+
     .company-logo {
-        width: 110px;
-        height: 110px;
+        width: 100px;
+        height: 100px;
     }
 
     .company-name {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .login-box {
-        max-width: 380px;
+        right: auto;
+        width: 350px;
     }
 }
 
-/* LARGE SCREENS */
+
+/* ============= LARGE SCREENS ============= */
 @media (min-width: 1025px) {
 
+    .header {
+        padding-left: 200px;  /* keep logo left */
+    }
+
     .company-logo {
-        width: 130px;
-        height: 130px;
+        width: 120px;
+        height: 120px;
     }
 
     .company-name {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .login-box {
-        max-width: 420px;
+        width: 400px;
+        right: 200px;
     }
 }
