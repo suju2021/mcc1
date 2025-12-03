@@ -111,7 +111,7 @@ body {
 
     .header {
         height: auto;
-        min-height: 100vh;     /* Fill screen */
+        min-height: 90vh;     /* Fill screen */
         padding: 10px 15px;    /* REMOVE unwanted space */
         display: flex;
         flex-direction: column;
@@ -205,3 +205,4 @@ body {
         right: 200px;
     }
 }
+
