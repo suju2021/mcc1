@@ -1,4 +1,3 @@
-/* GLOBAL FIX — STOP SCREEN MOVEMENT */
 html, body {
     width: 100%;
     max-width: 100%;
@@ -31,6 +30,7 @@ body {
     position: relative;
 }
 
+/* LOGO + TITLE */
 .header-left {
     display: flex;
     flex-direction: column;
@@ -40,20 +40,21 @@ body {
 .company-logo {
     width: 120px;
     height: 120px;
-    padding: 12px;
-    background: #fff;
-    border-radius: 20px;
     object-fit: contain;
+    background: #fff;
+    padding: 12px;
+    border-radius: 20px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.12);
 }
 
 .company-name {
-    margin-top: 12px;
     font-size: 28px;
+    margin-top: 12px;
     font-weight: 800;
+    color: #000;
 }
 
-/* LOGIN BOX */
+/* LOGIN BOX (RIGHT SIDE DESKTOP) */
 .login-box {
     position: absolute;
     right: 180px;
@@ -61,10 +62,17 @@ body {
     transform: translateY(-50%);
     width: 380px;
     padding: 25px;
-    background: rgba(255,255,255,0.7);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(12px);
     border-radius: 18px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.login-box h2 {
+    margin: 0 0 15px 0;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
 }
 
 .login-box form {
@@ -73,19 +81,22 @@ body {
     gap: 12px;
 }
 
-.login-box input, .login-box select {
+.login-box input,
+.login-box select {
     padding: 12px;
+    font-size: 15px;
     border-radius: 10px;
     border: 1px solid #d5d9e0;
 }
 
 .login-box button {
     padding: 12px;
-    border-radius: 10px;
-    border: none;
-    background: #3b6cff;
-    color: white;
+    font-size: 16px;
     font-weight: bold;
+    border: none;
+    color: #fff;
+    background: #3b6cff;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -93,60 +104,90 @@ body {
     background: #244df2;
 }
 
-/* ===================== MOBILE ===================== */
+
+/* ===================== MOBILE VIEW ===================== */
 @media (max-width: 767px) {
 
     .header {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
+        height: auto;
         min-height: 100vh;
+        padding: 20px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;   /* PERFECT CENTER */
+        align-items: center;
+        gap: 15px;
         text-align: center;
+        position: relative;
     }
 
     .company-logo {
         width: 90px;
         height: 90px;
-        margin-top: 30px;
+        padding: 8px;
+        margin-top: 40px;
+        border-radius: 16px;
     }
 
     .company-name {
         font-size: 22px;
-        margin: 10px;
+        margin: 10px; /* FIXED UNIT */
     }
 
+    /* Center login box (NO ABSOLUTE, NO MOVEMENT) */
     .login-box {
         position: relative !important;
         width: 95%;
         max-width: 350px;
         margin-top: 20px;
-        transform: none;
-        right: auto;
+        padding: 18px;
         top: auto;
+        right: auto;
+        transform: none;
+    }
+
+    .login-box input,
+    .login-box select {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .login-box button {
+        font-size: 17px;
+        padding: 13px;
     }
 }
 
-/* ===================== TABLET ===================== */
+
+/* ===================== TABLET VIEW ===================== */
 @media (min-width: 768px) and (max-width: 1024px) {
 
     .header {
         padding-left: 40px;
         height: 85vh;
+        justify-content: flex-start;
     }
 
     .login-box {
-        position: relative;
         right: auto;
+        width: 360px;
         transform: none;
+        position: relative;
         margin-left: 40px;
+        top: auto;
     }
 }
 
-/* ===================== DESKTOP ===================== */
+
+/* ===================== LARGE SCREEN ===================== */
 @media (min-width: 1025px) {
+
+    .header {
+        padding-left: 180px;
+    }
+
     .login-box {
-        right: 350px;
         width: 380px;
+        right: 350px;
     }
 }
