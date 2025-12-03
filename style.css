@@ -142,7 +142,7 @@ body {
         margin-top: 20px;
         padding: 18px;
         top: auto;
-        right: auto;
+        right: center;
         transform: none;
     }
 
@@ -191,3 +191,4 @@ body {
         right: 350px;
     }
 }
+
