@@ -1,7 +1,6 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-
     background: linear-gradient(
         to bottom,
         #A0D2EB 0%,
@@ -14,26 +13,27 @@ body {
     overflow-x: hidden;
 }
 
-/* FULL PAGE LEFT-CENTER LOGO SECTION */
+/* MAIN SECTION – CENTER EVERYTHING */
 .header {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;      /* Stacks logo and login box */
     align-items: center;
-    justify-content: flex-start;
-    padding-left: 225px;
-    background: transparent;
-    animation: fadeIn 1.2s ease; /* fade-in allowed */
+    justify-content: center;     /* Perfect center */
+    text-align: center;
+    gap: 25px;                   /* Space between logo & login */
+    padding: 40px 20px;
+    animation: fadeIn 1.2s ease;
 }
 
-/* LEFT SIDE CONTENT */
+/* LOGO + TITLE */
 .header-left {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* LOGO */
 .company-logo {
     width: 120px;
     height: 120px;
@@ -45,24 +45,19 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* COMPANY NAME */
 .company-name {
     font-size: 28px;
     margin-top: 15px;
     font-weight: 800;
     letter-spacing: 1.5px;
     color: #000;
-    text-align: center;
     animation: textPop 1.6s ease;
 }
 
 /* LOGIN BOX */
 .login-box {
-    position: absolute;
-    right: 200px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     padding: 25px;
     background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(12px);
@@ -109,31 +104,10 @@ body {
     background: #244df2;
     transform: scale(1.03);
 }
+
+/* MOBILE */
 @media (max-width: 767px) {
 
-    /* Full section stacks vertically */
-    .header {
-        height: auto;
-        padding: 40px 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center; /* Center everything horizontally */
-        text-align: center;
-        gap: 25px; /* spacing between logo & login box */
-    }
-
-    /* Center logo + company title */
-    .header-left {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* centers logo and title */
-        justify-content: center;
-        margin-bottom: 10px;
-    }
-
-    /* Smaller logo for mobile */
     .company-logo {
         width: 90px;
         height: 90px;
@@ -141,26 +115,18 @@ body {
         border-radius: 16px;
     }
 
-    /* Adjust company name */
     .company-name {
         font-size: 22px;
         letter-spacing: 1px;
         margin-top: 10px;
     }
 
-    /* PERFECT CENTERED LOGIN BOX ON MOBILE */
     .login-box {
-        position: relative;   /* Removes right-absolute positioning */
-        width: 70%;           /* Full width but with small margins */
-        max-width: 350px;     /* Looks perfect on all mobiles */
-        margin: 50 auto;       /* Center horizontally */
-        transform: none;
-        right: auto;
-        top: auto;
+        width: 90%;
+        max-width: 360px;
         padding: 20px;
     }
 
-    /* Inputs look clean on mobile */
     .login-box input,
     .login-box select {
         font-size: 16px;
@@ -172,48 +138,37 @@ body {
         padding: 14px;
     }
 }
+
+/* TABLET */
 @media (min-width: 768px) and (max-width: 1024px) {
 
-    .header {
-        height: 75vh;
-        padding-left: 40px;
-    }
-
     .company-logo {
-        width: 100px;
-        height: 100px;
+        width: 110px;
+        height: 110px;
     }
 
     .company-name {
-        font-size: 24px;
+        font-size: 26px;
     }
 
     .login-box {
-        right: auto;
-        width: 350px;
+        max-width: 380px;
     }
 }
+
+/* LARGE SCREENS */
 @media (min-width: 1025px) {
 
-    .header {
-        height: 100vh;
-        padding-left: 200px;
-    }
-
     .company-logo {
-        width: 120px;
-        height: 120px;
+        width: 130px;
+        height: 130px;
     }
 
     .company-name {
-        font-size: 28px;
+        font-size: 30px;
     }
 
     .login-box {
-        width: 400px;
-        right: 200px;
+        max-width: 420px;
     }
 }
-
-
-
