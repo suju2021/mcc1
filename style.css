@@ -111,7 +111,7 @@ body {
     .header {
         height: auto;
         min-height: 100vh;
-        padding: 20px 15px;
+        padding: 0px 0px;
         display: flex;
         flex-direction: column;
         justify-content: center;   /* PERFECT CENTER */
@@ -191,5 +191,6 @@ body {
         right: 350px;
     }
 }
+
 
 
