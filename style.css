@@ -101,7 +101,7 @@ body {
 
 
 /* ===================== MOBILE VIEW ===================== */
-@media (max-width: 767px) {
+@media (max-width: 480px) {
 
     .header {
         height: auto;
@@ -186,5 +186,6 @@ body {
         right: 350px;
     }
 }
+
 
 
