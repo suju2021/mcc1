@@ -15,8 +15,8 @@ window.addEventListener("scroll", () => {
 
 // USER DATABASE WITH ROLES
 const USERS = [
-    { username: "admin1", password: "admin123", role: "admin" },
-    { username: "admin2", password: "admin456", role: "admin" },
+    { username: "Prashant", password: "mithun@8601", role: "admin" },
+    { username: "Suju", password: "mithun@2105", role: "admin" },
     { username: "mumbai_user", password: "mum999", role: "editor" },
     { username: "bangalore_user", password: "blr888", role: "viewer" }
 ];
