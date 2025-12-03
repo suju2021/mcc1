@@ -139,7 +139,7 @@ body {
         position: relative !important;
         width: 95%;
         max-width: 350px;
-        margin-top: 20px;
+        margin-top: 10px;
         padding: 18px;
         top: auto;
         right: auto;
@@ -191,4 +191,5 @@ body {
         right: 350px;
     }
 }
+
 
