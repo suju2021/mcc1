@@ -14,14 +14,14 @@ body {
     overflow-x: hidden;
 }
 
-/* DESKTOP DEFAULT — LOGO LEFT, LOGIN BOX RIGHT */
+/* DESKTOP DEFAULT — LOGO LEFT, LOGIN RIGHT */
 .header {
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: flex-start;   /* LEFT align on laptop */
-    padding-left: 200px;           /* Push logo to left */
+    justify-content: flex-start;   /* LEFT on desktop */
+    padding-left: 200px;
     background: transparent;
     animation: fadeIn 1.2s ease;
 }
@@ -41,7 +41,6 @@ body {
     background: #ffffff;
     padding: 12px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* COMPANY NAME */
@@ -53,10 +52,10 @@ body {
     color: #000;
 }
 
-/* LOGIN BOX (Right side for desktop) */
+/* LOGIN BOX RIGHT SIDE */
 .login-box {
     position: absolute;
-    right: 200px;      /* Position login box at right side */
+    right: 200px;
     top: 50%;
     transform: translateY(-50%);
     width: 400px;
@@ -87,7 +86,6 @@ body {
     border: 1px solid #d5d9e0;
     font-size: 15px;
     background: #ffffffcc;
-    transition: 0.3s ease;
 }
 
 .login-box button {
@@ -108,19 +106,19 @@ body {
 }
 
 
-/* ============= MOBILE VIEW ============= */
+/* ===================== MOBILE VIEW ===================== */
 @media (max-width: 767px) {
 
     .header {
         height: auto;
-        padding: 40px 20px;
-
+        min-height: 100vh;     /* Fill screen */
+        padding: 10px 15px;    /* REMOVE unwanted space */
         display: flex;
-        flex-direction: column; /* Stack logo + login vertically */
-        justify-content: center;
-        align-items: center;    /* CENTER LOGO IN MOBILE */
+        flex-direction: column;
+        justify-content: flex-start;  /* Pull content up */
+        align-items: center;          /* Center horizontally */
         text-align: center;
-        gap: 25px;
+        gap: 15px;                    /* Less spacing */
     }
 
     .company-logo {
@@ -132,40 +130,40 @@ body {
 
     .company-name {
         font-size: 22px;
-        margin-top: 10px;
+        margin: 5px 0;               /* Remove big space */
     }
 
-    /* CENTER LOGIN BOX IN MOBILE */
     .login-box {
         position: relative;
-        right: auto;
-        top: auto;
-        transform: none;
-        width: 90%;
-        max-width: 380px;
+        width: 92%;
+        max-width: 360px;
         margin: 0 auto;
-        padding: 20px;
+        padding: 15px;               /* Smaller padding */
+        top: 0;
+        right: 0;
+        transform: none;
     }
 
     .login-box input,
     .login-box select {
         font-size: 16px;
-        padding: 13px;
+        padding: 12px;
     }
 
     .login-box button {
         font-size: 17px;
-        padding: 14px;
+        padding: 12px;
     }
 }
 
 
-/* ============= TABLET ============= */
+/* ===================== TABLET VIEW ===================== */
 @media (min-width: 768px) and (max-width: 1024px) {
 
     .header {
+        height: 75vh;
         padding-left: 40px;
-        justify-content: flex-start; /* logo left */
+        justify-content: flex-start;
     }
 
     .company-logo {
@@ -184,11 +182,13 @@ body {
 }
 
 
-/* ============= LARGE SCREENS ============= */
+/* ===================== LARGE SCREEN ===================== */
 @media (min-width: 1025px) {
 
     .header {
-        padding-left: 200px;  /* keep logo left */
+        height: 100vh;
+        padding-left: 175px;
+        justify-content: flex-start;
     }
 
     .company-logo {
