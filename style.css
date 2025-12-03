@@ -10,7 +10,7 @@ body {
         #8458B3 60%,
         #494D5F 100%
     );
-    background-attachment: fixed;
+    background-attachment: scroll; /* FIX: no screen shaking */
     overflow-x: hidden;
 }
 
@@ -105,13 +105,15 @@ body {
 
     .header {
         height: auto;
+        min-height: 100vh;
         padding: 20px 15px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        gap: 10px;   /* Perfect spacing */
+        gap: 15px;
         text-align: center;
+        position: relative; /* FIX movement */
     }
 
     .company-logo {
@@ -127,9 +129,9 @@ body {
         margin: 10;
     }
 
-    /* Center login box (NO ABSOLUTE) */
+    /* Center login box (NO ABSOLUTE, NO MOVEMENT) */
     .login-box {
-        position: relative;
+        position: relative !important;
         width: 95%;
         max-width: 350px;
         margin-top: 10px;
@@ -181,6 +183,6 @@ body {
 
     .login-box {
         width: 380px;
-        right: 380px;
+        right: 350px;
     }
 }
