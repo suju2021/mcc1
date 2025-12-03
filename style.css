@@ -105,7 +105,7 @@ body {
 
     .header {
         height: auto;
-        min-height: 100vh;
+        min-height: 80vh;
         padding: 20px 15px;
         display: flex;
         flex-direction: column;
@@ -186,3 +186,4 @@ body {
         right: 350px;
     }
 }
+
