@@ -118,7 +118,7 @@ body {
         justify-content: flex-start;  /* Pull content up */
         align-items: center;          /* Center horizontally */
         text-align: center;
-        gap: 15px;                    /* Less spacing */
+        gap: 100px;                    /* Less spacing */
     }
 
     .company-logo {
@@ -205,4 +205,5 @@ body {
         right: 200px;
     }
 }
+
 
